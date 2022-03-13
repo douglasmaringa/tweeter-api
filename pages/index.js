@@ -11,7 +11,7 @@ export default function IndexPage({type,color}) {
 
   const getTweets = async()=>{
     setLoading(true)
-  axios.post(`http://localhost:3000/api/getTweets`, {
+  axios.post(`https://tweeter-api3.vercel.app/api/getTweets`, {
       "name":search
     
 }).then((response) => {
