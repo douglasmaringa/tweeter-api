@@ -84,7 +84,7 @@ console.log(data)
 
 
 {
-  data.map((e)=>(
+  data?.map((e)=>(
     <div key={e.tweet} className="max-w-sm rounded overflow-hidden shadow-lg">
  
   <div className="px-6 py-4">
