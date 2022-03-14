@@ -17,8 +17,8 @@ export default function IndexPage({type,color}) {
 }).then((response) => {
   //console.log(response.data)
   const data2 = []
-  const data3 = Array.from(response.data);
-  data3.map((m)=>{
+  
+  response?.data.map((m)=>{
     data2.push({"tweet":m.text,"likes":m.public_metrics.like_count})
     //console.log(m)
   })
