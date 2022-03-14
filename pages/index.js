@@ -11,14 +11,16 @@ export default function IndexPage({type,color}) {
 
   const getTweets = async()=>{
     setLoading(true)
-  axios.post(`/api/getTweets`, {
+  axios.post(`api/getTweets`, {
       "name":search
     
 }).then((response) => {
-  //setData(response.data)
+  //console.log(response.data)
   const data2 = []
-  response.data.map((m)=>{
+  const data3 = Array.from(response.data);
+  data3.map((m)=>{
     data2.push({"tweet":m.text,"likes":m.public_metrics.like_count})
+    //console.log(m)
   })
   
   var sortedData = [...data2].sort((a, b) => b.likes - a.likes)
@@ -31,7 +33,7 @@ export default function IndexPage({type,color}) {
 })
    
 }
-console.log(data)
+//console.log(data)
   return (
     <div className="flex flex-col items-center justify-center space-y-12">
      
