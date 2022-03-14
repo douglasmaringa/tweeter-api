@@ -11,7 +11,7 @@ export default function IndexPage({type,color}) {
 
   const getTweets = async()=>{
     setLoading(true)
-  axios.post(`https://tweeter-api3-fivo13mht-douglasmaringa.vercel.app/api/getTweets`, {
+  axios.post(`/api/getTweets`, {
       "name":search
     
 }).then((response) => {
@@ -84,7 +84,7 @@ console.log(data)
 
 
 {
-  data?.map((e)=>(
+  data.map((e)=>(
     <div key={e.tweet} className="max-w-sm rounded overflow-hidden shadow-lg">
  
   <div className="px-6 py-4">
